@@ -9,6 +9,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selectors.*;
+import static com.codeborne.selenide.Selenide.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
@@ -35,4 +38,20 @@ public class ChromeTest {
             driver.quit();
         }
     }
+
+    @Test
+    public void shouldBeAppointmentMeeting() {
+        open("http://localhost:9999"); // открываем страницу
+        $("[data-test-id = 'city']").setValue("Краснодар"); // находим элемент (поле "Город") и вводим туда текст
+        $("[data-test-id = 'date']").setValue("15.12.2021"); // находим элемент (поле "Дата") и вводим туда текст
+        $("[data-test-id = 'name']").setValue("Семёнов Алексей"); // находим элемент (поле "Фамилия Имя") и вводим туда текст
+        $("[data-test-id = 'phone']").setValue("+79371458228"); // находим элемент (поле "Телефон") и вводим туда текст
+        $("[class='checkbox__box']").click(); // находим элемент (поле "Телефон") и кликаем по нему
+        $("[class='button__text']").click(); // находим элемент (кнопка "Забронировать") и кликаем по нему
+        $("").click(); // находим элемент (кнопка "Забронировать") и кликаем по
+
+
+    }
+
+
 }
