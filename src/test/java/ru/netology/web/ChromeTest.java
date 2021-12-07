@@ -14,8 +14,8 @@ public class ChromeTest {
 
         open("http://localhost:9999"); // открываем страницу
         $("[data-test-id = 'city'] input").setValue("Краснодар"); // находим элемент (поле "Город") и вводим туда текст
-        $("[data-test-id = 'date'] input").sendKeys(Keys.chord(Keys.COMMAND, "a", Keys.DELETE)); // предварительная чистка поля с датой по умолчанию
-        $("[data-test-id = 'date'] input").setValue("15.12.2021"); // находим элемент (поле "Дата") и вводим туда текст
+        $("[data-test-id = 'date'] input").sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE)); // предварительная чистка поля с датой по умолчанию
+        $("[data-test-id = 'date'] input").setValue("15.12.2021"); // находим элемент (поле "Дата") и вводим туда новую дату
         $("[data-test-id = 'name'] input").setValue("Шишкин Алексей"); // находим элемент (поле "Фамилия Имя") и вводим туда текст
         $("[data-test-id = 'phone'] input").setValue("+79371458228"); // находим элемент (поле "Телефон") и вводим туда текст
         $("[class='checkbox__box']").click(); // находим элемент (поле "Чек-бокс") и кликаем по нему
